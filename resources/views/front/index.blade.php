@@ -1,9 +1,12 @@
 @extends('layouts.header')
 @section('pagecontent')
 <div class="container">
-
+<center>
+@if(Session::has('Success'))
+        <alert class="alert alert-danger">{{Session::get('Success')}}</alert>
+        @endif
+</center>
       <div class="row">
-
         <div class="col-lg-3">
 
           <h1 class="my-4">Anvil's </h1>
@@ -17,7 +20,7 @@
         <!-- /.col-lg-3 -->
 
         <div class="col-lg-9">
-
+        
           <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
             <ol class="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

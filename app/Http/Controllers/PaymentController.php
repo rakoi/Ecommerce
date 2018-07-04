@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\orders;
+use Session;
 use Auth;
 use App\Product;
 use Illuminate\Http\Request;
@@ -68,8 +69,9 @@ class PaymentController extends Controller
 		
 		
 
-
-        return "Charged";
+        Cart::destroy();
+        Session::flash('Success',"Success Order recieved");
+        return redirect('/');
     }
 
     /**
